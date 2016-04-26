@@ -1,0 +1,42 @@
+安装及使用简明教程：
+
+1、安装git：选择默认安装即可，提示时全部选择“下一步”；
+
+2、设置用户标识,即用户名和邮箱：
+    git config --global user.name “唯一标识:名字”
+    git config --global user.email “邮箱地址”
+    (相关设置参见“git官方文档.docx”中的“初次运行git前的配置”)；
+
+3、配置环境变量：%GIT_HOME%\bin，其中，sh.exe是类Linux运行环境，git.exe是真正的git程序；
+
+4、创建git仓库(repository)：运行sh.exe进入类Linux环境,或进入仓库所在目录，
+   执行命令：git init，默认创建分支：master；成功后会生成.git文件夹，就是“暂存区”的所在地；
+
+
+Git常用命令：(各命令解释详见“git安装及使用讲解.docx”)
+   1)、添加文件到缓存区：
+       ①git add 文件名：添加一个文件；
+       ②git add -A：添加该目录下所有文件；
+   2)、提交：git commit -am “信息”(a：所有文件，m：消息)；
+   3)、①添加远程仓库：git remote add 本地显示仓库名(自定义) 地址,
+         其中地址包括四种协议：git，ssh，http，本地协议(详情参见“git官方文档.docx”中的“服务器上的git--协议”)；
+       ②删除远程仓库：git remote rm 自定义的本地显示的远程仓库名
+       ③查看远程仓库信息：git remote -v
+   4)、从远程仓库下拉代码：git clone [--branch 分支名] 远程仓库地址 保存路径
+       将远程仓库分支下拉到本地：git checkout –b 分支名 远程仓库名/远程仓库的分支名
+       要更新你的本地仓库至最新改动:git pull
+   5)、推送本地仓库代码到远程仓库：git push [-u] 自定义的本地显示的远程仓库名 [分支名],第一次推送需要参数“-u”
+   6)、查看状态：git status
+   7)、查看修改内容：git diff 文件名
+   8)、历史记录：git log
+   9)、版本回退：git reset –hard HEAD^ | git reset –hard HEAD^^ | git reset –hard HEAD~100
+       丢弃版本：git checkout --文件名
+   10)、删除文件：rm 文件名 | 直接删除本地文件 ，再执行提交：git commit -am “信息”；
+   11)、分支：
+        创建分支：git branch 分支名
+        切换分支：git checkout 分支名
+        创建+切换分支：git checkout –b 分支名
+	查看分支：git branch
+        合并某分支到当前分支：git merge 分支名
+        删除分支：git branch –d 分支名
+	
