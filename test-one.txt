@@ -40,3 +40,5 @@ Git常用命令：(各命令解释详见“git安装及使用讲解.docx”)
         合并某分支到当前分支：git merge 分支名
         删除分支：git branch –d 分支名
 	
+	
+	github.com
